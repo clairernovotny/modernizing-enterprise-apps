@@ -7,10 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoExpenses.Data", "Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoExpenses", "ContosoExpenses\ContosoExpenses.csproj", "{2AC00A7B-374E-452C-9729-E278C9BCEDA3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{16FB7044-5691-48BC-97AA-0690D6A86C97}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0105FC2-5CF0-4486-B962-829B7F362075}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		azure-pipelines.yml = azure-pipelines.yml
 		Directory.Build.props = Directory.Build.props
+		version.json = version.json
 	EndProjectSection
+EndProject
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ContosoExpenses.Package", "ContosoExpenses.Package\ContosoExpenses.Package.wapproj", "{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +71,36 @@ Global
 		{2AC00A7B-374E-452C-9729-E278C9BCEDA3}.Release|x64.Build.0 = Release|Any CPU
 		{2AC00A7B-374E-452C-9729-E278C9BCEDA3}.Release|x86.ActiveCfg = Release|Any CPU
 		{2AC00A7B-374E-452C-9729-E278C9BCEDA3}.Release|x86.Build.0 = Release|Any CPU
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|ARM.ActiveCfg = Debug|ARM
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|ARM.Build.0 = Debug|ARM
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|ARM.Deploy.0 = Debug|ARM
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|ARM64.Build.0 = Debug|ARM64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|x64.ActiveCfg = Debug|x64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|x64.Build.0 = Debug|x64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|x64.Deploy.0 = Debug|x64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|x86.ActiveCfg = Debug|x86
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|x86.Build.0 = Debug|x86
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Debug|x86.Deploy.0 = Debug|x86
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|ARM.ActiveCfg = Release|ARM
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|ARM.Build.0 = Release|ARM
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|ARM.Deploy.0 = Release|ARM
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|ARM64.ActiveCfg = Release|ARM64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|ARM64.Build.0 = Release|ARM64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|ARM64.Deploy.0 = Release|ARM64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|x64.ActiveCfg = Release|x64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|x64.Build.0 = Release|x64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|x64.Deploy.0 = Release|x64
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|x86.ActiveCfg = Release|x86
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|x86.Build.0 = Release|x86
+		{5D798AB0-5F7D-4AB6-95A9-E05BE05F4875}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

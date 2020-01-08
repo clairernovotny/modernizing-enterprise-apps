@@ -1,0 +1,62 @@
+trigger:
+- master
+- rel/*
+
+pr:
+- master
+- rel/*
+
+
+pool:
+  vmImage: windows-latest
+
+variables: 
+  BuildConfiguration: Release
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    version: 3.1.x
+
+- task: DotNetCoreCLI@2  
+  inputs:
+    command: custom
+    custom: tool
+    arguments: install --tool-path . nbgv
+  displayName: Install NBGV tool
+
+- script: nbgv cloud -c -a
+  displayName: Set Version
+
+- powershell: |   
+    # Set versions
+
+    # Update appxmanifests. These must be done before build.
+    [xml]$manifest = Get-Content ".\ContosoExpenses.Package\package.appxmanifest"
+    $manifest.Package.Identity.Version = "$(GitBuildVersionSimple).0"
+    $manifest.Save(".\ContosoExpenses.Package\package.appxmanifest")
+
+  displayName: Update manifest and badge versions
+
+- task: MSBuild@1
+  displayName: Package Restore
+  inputs:
+    solution: ContosoExpenses/ContosoExpenses.csproj
+    msbuildArguments: /t:restore
+    configuration: $(BuildConfiguration)
+    maximumCpuCount: true
+
+- task: MSBuild@1
+  displayName: Build Package
+  inputs:
+    solution: ContosoExpenses.Package/ContosoExpenses.Package.wapproj
+    msbuildArguments: /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\Packages\\"
+    configuration: $(BuildConfiguration)
+    maximumCpuCount: true
+
+
+
+- publish: $(Build.ArtifactStagingDirectory)\Packages
+  displayName: Publish build packages
+  artifact: BuildPackages
