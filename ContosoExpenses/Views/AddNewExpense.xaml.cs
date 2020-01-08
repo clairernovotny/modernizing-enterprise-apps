@@ -15,6 +15,8 @@
 using System.Windows;
 using GalaSoft.MvvmLight.Messaging;
 using ContosoExpenses.Messages;
+using Microsoft.Toolkit.Wpf.UI.XamlHost;
+using System;
 
 namespace ContosoExpenses.Views
 {
@@ -30,6 +32,25 @@ namespace ContosoExpenses.Views
             {
                 this.Close();
             });
+        }
+
+        private void CalendarUwp_ChildChanged(object sender, System.EventArgs e)
+        {
+            WindowsXamlHost windowsXamlHost = (WindowsXamlHost)sender;
+
+            Windows.UI.Xaml.Controls.CalendarView calendarView =
+                (Windows.UI.Xaml.Controls.CalendarView)windowsXamlHost.Child;
+
+            if (calendarView != null)
+            {
+                calendarView.SelectedDatesChanged += (obj, args) =>
+                {
+                    if (args.AddedDates.Count > 0)
+                    {
+                        Messenger.Default.Send<SelectedDateMessage>(new SelectedDateMessage(args.AddedDates[0].DateTime));
+                    }
+                };
+            }
         }
     }
 }

@@ -82,6 +82,11 @@ namespace ContosoExpenses.ViewModels
             this.storageService = storageService;
 
             Date = DateTime.Today;
+
+            Messenger.Default.Register<SelectedDateMessage>(this, message =>
+            {
+                Date = message.SelectedDate;
+            });
         }
 
         private bool IsFormFilled
